@@ -7,7 +7,6 @@ class _ConfirmationButton extends StatelessWidget {
     required this.onPressed,
     required this.child,
     this.padding = 18,
-    this.expanded = false,
     this.color,
   });
 
@@ -23,9 +22,6 @@ class _ConfirmationButton extends StatelessWidget {
   /// The padding surrounding the content
   final double padding;
 
-  /// True if the button should expand to fill the available space.
-  final bool expanded;
-
   @override
   Widget build(BuildContext context) => ElevatedButton(
         onPressed: onPressed,
@@ -34,7 +30,6 @@ class _ConfirmationButton extends StatelessWidget {
           padding: EdgeInsets.all(padding),
           backgroundColor: color ?? Theme.of(context).colorScheme.primary,
           foregroundColor: Theme.of(context).colorScheme.onPrimary,
-          minimumSize: expanded ? const Size.fromHeight(50) : null,
         ),
         child: child,
       );

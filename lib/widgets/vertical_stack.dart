@@ -4,7 +4,6 @@ class _VerticalStack extends StatelessWidget {
   const _VerticalStack({
     required this.header,
     required this.padding,
-    super.key,
     this.title,
     this.titleStyle,
     this.desc,
