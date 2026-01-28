@@ -1,3 +1,7 @@
+## [0.0.2] - 2026-01-28
+### ✨ Added
+- **Internationalization**: Adds support for en, es languages by default
+
 ## [0.0.1] - 2025-08-11
 
 ### ✨ Added
