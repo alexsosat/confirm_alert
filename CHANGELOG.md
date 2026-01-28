@@ -1,3 +1,7 @@
+## [0.0.3] - 2026-01-28
+### Fixed
+- **Internationalization**: Exposes the delegate for the localizations
+
 ## [0.0.2] - 2026-01-28
 ### ✨ Added
 - **Internationalization**: Adds support for en, es languages by default

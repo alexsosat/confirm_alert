@@ -21,6 +21,41 @@ dependencies:
   confirm_alert: ^0.0.1
 ```
 
+## Localization (optional)
+
+This package includes built-in localized strings (currently `en` and `es`). To enable them, add the package delegate to your app.
+
+### 1) Add `flutter_localizations`
+
+In your app’s `pubspec.yaml`:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+```
+
+### 2) Register the delegate in your app
+
+```dart
+import 'package:confirm_alert/localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+MaterialApp(
+  localizationsDelegates: const [
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    ConfirmAlertLocalizations.delegate,
+  ],
+  supportedLocales: ConfirmAlertLocalizations.delegate.supportedLocales,
+  // ...
+);
+```
+
 ## Quick Start
 
 ### Basic Confirmation Dialog

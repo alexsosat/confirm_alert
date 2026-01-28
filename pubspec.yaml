@@ -1,6 +1,6 @@
 name: confirm_alert
 description: "A package to show confirmation dialogs."
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/alexsosat/confirm_alert
 
 environment:
