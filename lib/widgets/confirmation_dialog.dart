@@ -5,6 +5,7 @@ import "package:lottie/lottie.dart";
 import "../classes/confirmation_dialog_options.dart";
 import "../classes/confirmation_dialog_texts.dart";
 import "../classes/dialog_types_enum.dart";
+import "../localization/l10n.dart";
 
 part "vertical_stack.dart";
 part "confirmation_button.dart";
@@ -90,7 +91,8 @@ class ConfirmationDialog extends StatelessWidget {
                         options.confirmButtonColor ?? const Color(0xFF00CA71),
                     padding: 10,
                     child: Text(
-                      texts.confirmButtonText ?? "confirm",
+                      texts.confirmButtonText ??
+                          ConfirmAlertLocalizations.current.confirm,
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
@@ -100,7 +102,8 @@ class ConfirmationDialog extends StatelessWidget {
                           color: options.cancelButtonColor ?? Colors.grey,
                           padding: 10,
                           child: Text(
-                            texts.cancelButtonText ?? "cancel",
+                            texts.cancelButtonText ??
+                                ConfirmAlertLocalizations.current.cancel,
                             style: const TextStyle(color: Colors.white),
                           ),
                         )

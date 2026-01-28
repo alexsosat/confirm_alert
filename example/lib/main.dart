@@ -1,5 +1,6 @@
 import 'package:confirm_alert/show_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const ConfirmAlertExampleApp());
@@ -16,6 +17,15 @@ class ConfirmAlertExampleApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('es'),
+        Locale('en'),
+      ],
       home: const ConfirmAlertExamplePage(),
     );
   }
