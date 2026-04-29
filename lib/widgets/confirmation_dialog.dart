@@ -1,3 +1,4 @@
+import "package:confirm_alert/classes/dialog_result_enum.dart";
 import "package:flutter/material.dart";
 import "package:flutter_animate/flutter_animate.dart";
 import "package:lottie/lottie.dart";
@@ -38,7 +39,7 @@ class ConfirmationDialog extends StatelessWidget {
             behavior: HitTestBehavior.opaque,
             onTap: () {
               if (options.barrierDismissible) {
-                Navigator.of(context).pop(false);
+                Navigator.of(context).pop(DialogResult.dismiss);
               }
             },
             child: Center(
@@ -86,7 +87,7 @@ class ConfirmationDialog extends StatelessWidget {
                     bottom: 10,
                   ),
                   btnOk: _ConfirmationButton(
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () => Navigator.of(context).pop(DialogResult.ok),
                     color:
                         options.confirmButtonColor ?? const Color(0xFF00CA71),
                     padding: 10,
@@ -98,7 +99,8 @@ class ConfirmationDialog extends StatelessWidget {
                   ),
                   btnCancel: options.showCancel
                       ? _ConfirmationButton(
-                          onPressed: () => Navigator.of(context).pop(false),
+                          onPressed: () =>
+                              Navigator.of(context).pop(DialogResult.cancel),
                           color: options.cancelButtonColor ?? Colors.grey,
                           padding: 10,
                           child: Text(

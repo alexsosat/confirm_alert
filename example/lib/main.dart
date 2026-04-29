@@ -1,3 +1,4 @@
+import 'package:confirm_alert/classes/dialog_result_enum.dart';
 import 'package:confirm_alert/show_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -206,7 +207,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
     );
 
     setState(() {
-      _lastResult = 'Basic Confirmation: ${result ? "Confirmed" : "Cancelled"}';
+      _lastResult =
+          'Basic Confirmation: ${result == DialogResult.ok ? "Confirmed" : "Cancelled"}';
     });
   }
 
@@ -224,7 +226,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
     );
 
     setState(() {
-      _lastResult = 'Warning Dialog: ${result ? "Confirmed" : "Cancelled"}';
+      _lastResult =
+          'Warning Dialog: ${result == DialogResult.ok ? "Confirmed" : "Cancelled"}';
     });
   }
 
@@ -242,7 +245,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
     );
 
     setState(() {
-      _lastResult = 'Error Dialog: ${result ? "Retry" : "Cancelled"}';
+      _lastResult =
+          'Error Dialog: ${result == DialogResult.ok ? "Retry" : "Cancelled"}';
     });
   }
 
@@ -259,7 +263,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
     );
 
     setState(() {
-      _lastResult = 'Success Dialog: ${result ? "Confirmed" : "Dismissed"}';
+      _lastResult =
+          'Success Dialog: ${result == DialogResult.ok ? "Confirmed" : "Dismissed"}';
     });
   }
 
@@ -276,7 +281,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
     );
 
     setState(() {
-      _lastResult = 'Info Dialog: ${result ? "Confirmed" : "Dismissed"}';
+      _lastResult =
+          'Info Dialog: ${result == DialogResult.ok ? "Confirmed" : "Dismissed"}';
     });
   }
 
@@ -300,7 +306,7 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
 
     setState(() {
       _lastResult =
-          'Custom Options Dialog: ${result ? "Confirmed" : "Dismissed"}';
+          'Custom Options Dialog: ${result == DialogResult.ok ? "Confirmed" : "Dismissed"}';
     });
   }
 
@@ -367,7 +373,7 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
 
     setState(() {
       _lastResult =
-          'Custom Widgets Dialog: ${result ? "Confirmed" : "Cancelled"}';
+          'Custom Widgets Dialog: ${result == DialogResult.ok ? "Confirmed" : "Cancelled"}';
     });
   }
 
@@ -397,7 +403,8 @@ class _ConfirmAlertExamplePageState extends State<ConfirmAlertExamplePage> {
       );
 
       setState(() {
-        _lastResult = '$title Dialog: ${result ? "Continue" : "Skip"}';
+        _lastResult =
+            '$title Dialog: ${result == DialogResult.ok ? "Continue" : "Skip"}';
       });
 
       // Small delay between dialogs

@@ -1,4 +1,5 @@
 import "package:confirm_alert/classes/confirmation_dialog_texts.dart";
+import "package:confirm_alert/classes/dialog_result_enum.dart";
 import "package:confirm_alert/classes/dialog_types_enum.dart";
 import "package:flutter/material.dart";
 
@@ -13,12 +14,12 @@ export "classes/dialog_types_enum.dart";
 /// inside the application.
 ///
 /// The actions of the button are set in the [onCancel] and [onConfirm] parameters
-Future<bool> showConfirmationDialog({
+Future<DialogResult> showConfirmationDialog({
   required BuildContext context,
   required ConfirmationDialogTexts texts,
   ConfirmationDialogOptions options = const ConfirmationDialogOptions(),
 }) async {
-  final result = await showDialog<bool>(
+  final result = await showDialog<DialogResult>(
     context: context,
     builder: (context) => ScaffoldMessenger(
       child: Builder(
@@ -31,14 +32,14 @@ Future<bool> showConfirmationDialog({
   );
 
   if (result == null) {
-    return false;
+    return DialogResult.dismiss;
   }
 
   return result;
 }
 
 /// Opens an error dialog with a [title] and a [messageString]
-Future showWarningDialog(
+Future<DialogResult> showWarningDialog(
         {required BuildContext context,
         required ConfirmationDialogTexts texts,
         ConfirmationDialogOptions options = const ConfirmationDialogOptions(
@@ -53,7 +54,7 @@ Future showWarningDialog(
     );
 
 /// Opens an error dialog with a [title] and a [messageString]
-Future showErrorDialog({
+Future<DialogResult> showErrorDialog({
   required BuildContext context,
   required ConfirmationDialogTexts texts,
   ConfirmationDialogOptions options = const ConfirmationDialogOptions(
@@ -69,7 +70,7 @@ Future showErrorDialog({
     );
 
 /// Shows a success dialog
-Future showSuccessDialog({
+Future<DialogResult> showSuccessDialog({
   required BuildContext context,
   required ConfirmationDialogTexts texts,
   ConfirmationDialogOptions options = const ConfirmationDialogOptions(
@@ -85,7 +86,7 @@ Future showSuccessDialog({
     );
 
 /// Shows a info dialog
-Future showInfoDialog({
+Future<DialogResult> showInfoDialog({
   required BuildContext context,
   required ConfirmationDialogTexts texts,
   ConfirmationDialogOptions options = const ConfirmationDialogOptions(
