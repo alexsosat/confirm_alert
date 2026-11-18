@@ -1,3 +1,7 @@
+## [0.0.5] - 2026-04-29
+### Breaking change
+- **Adds result enum**: Adds a new result handling enum for results ok, cancelled and dismissed
+
 ## [0.0.3] - 2026-01-28
 ### Fixed
 - **Internationalization**: Exposes the delegate for the localizations
